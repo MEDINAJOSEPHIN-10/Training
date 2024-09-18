@@ -11,9 +11,10 @@ int main(){
 	}
 	printf("Enter the element to be searched:");
 	scanf("%d",&s);
-	if(arr[n]=s){
-		printf("%d",n);
+	for(int i=1;i<=n;i++){
+		if(arr[i]==s){
+			printf("%d",i);
+		}
 	}
-
 	return 0;
 	}
