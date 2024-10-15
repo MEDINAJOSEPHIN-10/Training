@@ -1,18 +1,20 @@
 #include<stdio.h>
 #include<string.h>
 #define MAX 50
+
 int main(){
 	char str[MAX];
-	char temp;
+
 	int i,j;
 	printf("Enter the string:");
 	fgets(str,MAX,stdin);
 	int n=strlen(str);
-	if(str[n]=='\n'){
-		str[n]='\0';
+	if(str[n-1]=='\n'){
+		str[n-1]='\0';
+		n--;
 	}
 	
-	printf("%d\n",n);
+//	printf("%d\n",n);
 	
 	char rev[MAX];
 	//reversing the string
@@ -22,13 +24,12 @@ int main(){
 
 	printf("the reversed string is:%s\n",rev);
 	printf("The string:%s\n",str);
-	for(int i=0;i<n;i++){
-	if(str[i] != rev[i]){
-		printf("Its not a palindrome\n");
-		return 0;
-	}
+	if(strcmp(str,rev)==0){
+		printf("Palindrome\n");
+		}
+	else{
+		printf("Not palindrome\n");
 	}
 
-	printf("Its palindrome\n");
 	return 0;
 }
